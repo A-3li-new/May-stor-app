@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: 35 55% 95%; /* Beige */
+  --foreground: 30 25% 10%; /* Black */
+  --card: 35 45% 90%; /* Lighter Beige */
+  --card-foreground: 30 25% 10%;
+  --popover: 35 55% 95%;
+  --popover-foreground: 30 25% 10%;
+  --primary: 30 40% 45%; /* Brown */
+  --primary-foreground: 35 55% 95%;
+  --secondary: 35 25% 85%;
+  --secondary-foreground: 30 15% 25%;
+  --muted: 35 35% 88%; /* Muted Beige */
+  --muted-foreground: 30 25% 45%;
+  --accent: 35 25% 85%;
+  --accent-foreground: 30 15% 25%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 35 20% 85%;
+  --input: 35 20% 85%;
+  --ring: 30 40% 45%; /* Brown */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 30 15% 8%;
+  --foreground: 40 20% 95%;
+  --card: 30 15% 10%;
+  --card-foreground: 40 20% 95%;
+  --popover: 30 15% 8%;
+  --popover-foreground: 40 20% 95%;
+  --primary: 35 50% 65%;
+  --primary-foreground: 30 15% 8%;
+  --secondary: 30 15% 15%;
+  --secondary-foreground: 40 20% 85%;
+  --muted: 30 15% 15%;
+  --muted-foreground: 40 15% 65%;
+  --accent: 30 15% 15%;
+  --accent-foreground: 40 20% 85%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 30 15% 20%;
+  --input: 30 15% 20%;
+  --ring: 35 50% 65%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', 'Cairo', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[dir="rtl"] {
+  font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 8px #666;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    hsl(var(--background)) 0%, 
+    hsl(var(--muted)) 50%, 
+    hsl(var(--background)) 100%);
+}
+
+.brand-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.product-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.admin-sidebar {
+  background: linear-gradient(180deg, 
+    hsl(var(--card)) 0%, 
+    hsl(var(--muted)) 100%);
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-shipped {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-delivered {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-cancelled {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.dark .status-pending {
+  background-color: #451a03;
+  color: #fbbf24;
+}
+
+.dark .status-shipped {
+  background-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+.dark .status-delivered {
+  background-color: #064e3b;
+  color: #34d399;
+}
+
+.dark .status-cancelled {
+  background-color: #7f1d1d;
+  color: #f87171;
+}
